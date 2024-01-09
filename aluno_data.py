@@ -16,8 +16,7 @@ class AlunoData:  # estebelece a conexão com o bando de dados.
                                        cursorclass=pymysql.cursors.DictCursor)  # para as pesquisa virem em formato de dicionarios.
         self.cursor = self.conexao.cursor()  # para executar os comandos das querys.
 
-    def insert(self,
-               aluno: Aluno):  # instancia aluno da classe Aluno, para iserir na tabela tem que criar o objeto a ser inserido.
+    def insert(self, aluno: Aluno):  # instancia aluno da classe Aluno, para iserir na tabela tem que criar o objeto a ser inserido.
         try:
             sql = "INSERT INTO alunos VALUES (%s, %s,%s, %s,%s)"
             self.cursor.execute(sql, (aluno.matricula, aluno.nome, aluno.idade, aluno.curso, aluno.nota))
